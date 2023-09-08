@@ -4,7 +4,6 @@ import { cores } from '../../../styles'
 export const Card = styled.div`
   background-color: ${cores.laranja};
   color: ${cores.branca};
-  margin: 8px;
   border: 8px solid ${cores.laranja};
 `
 
