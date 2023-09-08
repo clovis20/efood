@@ -13,10 +13,11 @@ export const Headerbar = styled.header`
   }
 
   .textos {
-    margin-top: -100px;
+    max-width: 1366px;
     padding: 64px 171px;
     display: flex;
     justify-content: space-between;
+    margin: -100px auto;
   }
 
   a {
