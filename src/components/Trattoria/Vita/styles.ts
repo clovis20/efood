@@ -5,18 +5,23 @@ export const Restbar = styled.header`
   font-size: 26px;
   height: 280px;
   color: ${cores.branca};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 33px 171px;
-  max-width: 1366px;
   margin: auto;
+  background-size: cover;
 
-  h2 {
-    font-weight: bold;
+  .container {
+    max-width: 1366px;
+    padding: 33px 171px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+      font-weight: bold;
     }
 
-  h3 {
+    h3 {
       font-weight: 100;
     }
   }

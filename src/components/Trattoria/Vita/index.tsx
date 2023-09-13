@@ -3,10 +3,8 @@ import { Restbar } from './styles'
 
 const Vita = () => (
   <Restbar style={{ backgroundImage: `url(${image})` }}>
-    <div>
+    <div className="container">
       <h3>Italiana</h3>
-    </div>
-    <div>
       <h2>La Dolce Vita Trattoria</h2>
     </div>
   </Restbar>
