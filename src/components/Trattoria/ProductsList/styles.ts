@@ -16,4 +16,9 @@ export const List = styled.ul`
   padding-right: 171px;
   width: 100%;
   margin: auto;
+
+  li {
+    width: 100%
+    max-width: 100%
+  }
 `

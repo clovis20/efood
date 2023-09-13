@@ -1,25 +1,18 @@
-import Cardapio from '../../../models/Cardapio'
+import { Prato } from '../../../pages/Trattoria'
 import Product from '../Product'
 
 import { Container, List } from './styles'
 
-export type Props = {
-  title: string
-  pratos: Cardapio[]
+interface Props {
+  pratos: Prato[]
 }
 
 const ProductsList = ({ pratos }: Props) => (
   <Container>
     <div className="container">
       <List>
-        {pratos.map((cardapio) => (
-          <Product
-            key={cardapio.id}
-            button={cardapio.button}
-            description={cardapio.description}
-            image={cardapio.image}
-            title={cardapio.title}
-          />
+        {pratos.map((prato) => (
+          <Product key={prato.id} prato={prato} />
         ))}
       </List>
     </div>
