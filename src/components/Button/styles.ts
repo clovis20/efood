@@ -23,4 +23,7 @@ export const ButtonLink = styled(Link)`
   margin-left: 8px;
   margin-bottom: 8px;
   text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `
