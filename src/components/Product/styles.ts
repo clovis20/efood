@@ -2,9 +2,17 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${cores.branca2};
   position: relative;
+  background-color: ${cores.branca2};
   border: 1px solid ${cores.laranja};
+
+  max-width: 472px;
+
+  > img {
+    width: 472px;
+    height: 217px;
+    object-fit: cover;
+  }
 `
 
 export const Titulo = styled.h3`
@@ -19,7 +27,7 @@ export const Descricao = styled.p`
   line-height: 22px;
   display: block;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 42px;
   margin-left: 8px;
 `
 

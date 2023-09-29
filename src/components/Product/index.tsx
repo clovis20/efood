@@ -11,6 +11,8 @@ type Props = {
   infos: string[]
   image: string
   notas: number
+  isDestaque: boolean
+  id: number
 }
 
 const Product = ({
@@ -19,11 +21,14 @@ const Product = ({
   description,
   infos,
   image,
-  notas
+  notas,
+  isDestaque,
+  id
 }: Props) => (
   <Card>
     <img src={image} alt={title} />
     <Infos>
+      {isDestaque && <Tag>Destaque da semana</Tag>}
       {infos.map((info) => (
         <Tag key={info}>{info}</Tag>
       ))}
@@ -36,7 +41,11 @@ const Product = ({
       </div>
     </TituloDiv>
     <Descricao>{description}</Descricao>
-    <Button type="link" to="/vitatrattoria" title="Conheça nosso restaurante">
+    <Button
+      type="link"
+      to={`/restaurantes/${id}`}
+      title="Conheça nosso restaurante"
+    >
       {button}
     </Button>
   </Card>
