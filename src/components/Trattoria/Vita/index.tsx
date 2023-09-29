@@ -1,11 +1,16 @@
-import image from '../../../assets/images/fundodolce.png'
 import { Restbar } from './styles'
 
-const Vita = () => (
-  <Restbar style={{ backgroundImage: `url(${image})` }}>
+interface VitaProps {
+  tipo: string
+  nome: string
+  capa: string
+}
+
+const Vita = ({ tipo, nome, capa }: VitaProps) => (
+  <Restbar style={{ backgroundImage: `url(${capa})` }}>
     <div className="container">
-      <h3>Italiana</h3>
-      <h2>La Dolce Vita Trattoria</h2>
+      <h3>{tipo}</h3>
+      <h2>{nome}</h2>
     </div>
   </Restbar>
 )
