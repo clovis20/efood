@@ -5,6 +5,7 @@ export const Card = styled.div`
   background-color: ${cores.laranja};
   color: ${cores.branca};
   border: 8px solid ${cores.laranja};
+  position: relative;
 
   > div {
     max-width: 100%;
@@ -12,7 +13,9 @@ export const Card = styled.div`
     object-fit: cover;
 
     > img {
-      width: 100%;
+      width: 304px;
+      height: 167px;
+      object-fit: cover;
     }
   }
 `
@@ -30,6 +33,7 @@ export const Descricao = styled.p`
   line-height: 22px;
   display: block;
   margin-top: 8px;
+  margin-bottom: 32px;
 `
 
 export const Botao = styled.button`
@@ -42,6 +46,9 @@ export const Botao = styled.button`
   border: none;
   cursor: pointer;
   margin-top: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `
 
 export const Modal = styled.div`
