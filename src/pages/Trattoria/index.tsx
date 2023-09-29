@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ProductsList from '../../components/Trattoria/ProductsList'
 import Header from '../../components/Trattoria/Header'
 import Vita from '../../components/Trattoria/Vita'
@@ -18,35 +19,43 @@ interface Restaurante {
   descricao: string
   capa: string
   cardapio: Prato[]
+  tipo: string // Adicione o campo "tipo" à interface do Restaurante
 }
 
 const Trattoria = () => {
-  const [cardapio, setCardapio] = useState<Prato[]>([])
+  const { id } = useParams()
+  const [restaurante, setRestaurante] = useState<Restaurante | null>(null)
 
   useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res: Restaurante[]) => {
-        // Filtrar o restaurante com ID 5
-        const restaurante = res.find((rest: Restaurante) => rest.id === 5)
+    if (id) {
+      fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
+        .then((res) => res.json())
+        .then((res: Restaurante[]) => {
+          // Encontre o restaurante com o ID correspondente
+          const restauranteSelecionado = res.find(
+            (rest: Restaurante) => rest.id === parseInt(id, 10)
+          )
 
-        if (restaurante) {
-          // Encontrar o prato com ID 17 dentro do restaurante
-          const prato = restaurante.cardapio.find((item) => item.id === 17)
-
-          if (prato) {
-            const pratosRepetidos = Array(6).fill(prato)
-            setCardapio(pratosRepetidos)
+          if (restauranteSelecionado) {
+            setRestaurante(restauranteSelecionado)
           }
-        }
-      })
-  }, [])
+        })
+    }
+  }, [id])
 
   return (
     <>
       <Header />
-      <Vita />
-      <ProductsList pratos={cardapio} />
+      {restaurante && (
+        <>
+          <Vita
+            tipo={restaurante.tipo}
+            nome={restaurante.titulo}
+            capa={restaurante.capa}
+          />
+          <ProductsList pratos={restaurante.cardapio || []} />
+        </>
+      )}
     </>
   )
 }
