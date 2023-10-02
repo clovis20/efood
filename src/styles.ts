@@ -24,7 +24,6 @@ export const GlobalCss = createGlobalStyle`
   }
 
   .container {
-    //max-width: 1366px;
     width: 100%;
     margin: 0 auto;
   }
