@@ -10,10 +10,7 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
   max-width: 1366px;
-  padding-top: 56px;
-  padding-bottom: 120px;
-  padding-left: 171px;
-  padding-right: 171px;
+  padding: 56px 171px 120px 171px;
   width: 100%;
   margin: auto;
 

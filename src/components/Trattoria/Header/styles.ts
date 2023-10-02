@@ -28,7 +28,8 @@ export const Headerbar = styled.header`
   }
 `
 
-export const Text = styled.h2`
+export const CartButton = styled.h2`
   font-weight: bold;
   font-size: 18px;
+  cursor: pointer;
 `

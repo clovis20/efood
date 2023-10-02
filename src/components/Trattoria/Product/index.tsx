@@ -9,6 +9,10 @@ import {
   ModalContent,
   AdicionarBotao
 } from './styles'
+//import { updateSpreadAssignment } from 'typescript'
+import { useDispatch } from 'react-redux'
+
+import { add, open } from '../../../store/reducers/cart'
 
 interface Prato {
   id: number
@@ -42,6 +46,13 @@ const Product = ({ prato }: Props) => {
     type: 'image',
     url: ''
   })
+
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(prato))
+    dispatch(open())
+  }
 
   return (
     <>
@@ -84,7 +95,7 @@ const Product = ({ prato }: Props) => {
             <h3>{prato.nome}</h3>
             <p>{prato.descricao}</p>
             <p> Serve: {prato.porcao}</p>
-            <AdicionarBotao>
+            <AdicionarBotao onClick={addToCart}>
               Adicionar ao carrinho - {formataPreco(prato.preco)}
             </AdicionarBotao>
           </div>
