@@ -1,18 +1,10 @@
 import { useState } from 'react'
-import fechar from '../../../assets/images/fechar.png'
-import {
-  Card,
-  Descricao,
-  Titulo,
-  Botao,
-  Modal,
-  ModalContent,
-  AdicionarBotao
-} from './styles'
-//import { updateSpreadAssignment } from 'typescript'
 import { useDispatch } from 'react-redux'
 
 import { add, open } from '../../../store/reducers/cart'
+
+import fechar from '../../../assets/images/fechar.png'
+import * as S from './styles'
 
 interface Prato {
   id: number
@@ -52,17 +44,22 @@ const Product = ({ prato }: Props) => {
   const addToCart = () => {
     dispatch(add(prato))
     dispatch(open())
+    setModalEstaAberto({
+      isVisible: false,
+      type: 'image',
+      url: ''
+    })
   }
 
   return (
     <>
-      <Card>
+      <S.Card>
         <div>
           <img src={prato.foto} alt={prato.nome} />
         </div>
-        <Titulo>{prato.nome}</Titulo>
-        <Descricao>{prato.descricao}</Descricao>
-        <Botao
+        <S.Titulo>{prato.nome}</S.Titulo>
+        <S.Description>{prato.descricao}</S.Description>
+        <S.Button
           onClick={() => {
             setModalEstaAberto({
               isVisible: true,
@@ -72,10 +69,10 @@ const Product = ({ prato }: Props) => {
           }}
         >
           Mais detalhes
-        </Botao>
-      </Card>
-      <Modal className={modalEstaAberto.isVisible ? 'visivel' : ''}>
-        <ModalContent className="container">
+        </S.Button>
+      </S.Card>
+      <S.Modal className={modalEstaAberto.isVisible ? 'visivel' : ''}>
+        <S.ModalContent className="container">
           <header>
             <img
               src={fechar}
@@ -95,11 +92,11 @@ const Product = ({ prato }: Props) => {
             <h3>{prato.nome}</h3>
             <p>{prato.descricao}</p>
             <p> Serve: {prato.porcao}</p>
-            <AdicionarBotao onClick={addToCart}>
+            <S.AddButton onClick={addToCart}>
               Adicionar ao carrinho - {formataPreco(prato.preco)}
-            </AdicionarBotao>
+            </S.AddButton>
           </div>
-        </ModalContent>
+        </S.ModalContent>
         <div
           className="overlay"
           onClick={() => {
@@ -110,7 +107,7 @@ const Product = ({ prato }: Props) => {
             })
           }}
         ></div>
-      </Modal>
+      </S.Modal>
     </>
   )
 }

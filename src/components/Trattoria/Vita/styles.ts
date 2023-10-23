@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { cores } from '../../../styles'
+import { colors } from '../../../styles'
 
 export const Restbar = styled.header`
   font-size: 26px;
   height: 280px;
-  color: ${cores.branca};
+  color: ${colors.white};
   margin: auto;
   background-size: cover;
   position: relative;

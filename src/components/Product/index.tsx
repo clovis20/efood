@@ -1,6 +1,7 @@
 import Tag from '../Tag'
-import { Card, Descricao, Titulo, Infos, Notas, TituloDiv } from './styles'
 import Button from '../Button'
+
+import * as S from './styles'
 
 import estrela from '../../assets/images/star_favorite.png'
 
@@ -25,22 +26,22 @@ const Product = ({
   isDestaque,
   id
 }: Props) => (
-  <Card>
+  <S.Card>
     <img src={image} alt={title} />
-    <Infos>
+    <S.Infos>
       {isDestaque && <Tag>Destaque da semana</Tag>}
       {infos.map((info) => (
         <Tag key={info}>{info}</Tag>
       ))}
-    </Infos>
-    <TituloDiv>
-      <Titulo>{title}</Titulo>
+    </S.Infos>
+    <S.TitleDiv>
+      <S.Title>{title}</S.Title>
       <div className="display">
-        <Notas>{notas}</Notas>
+        <S.Notes>{notas}</S.Notes>
         <img src={estrela} alt="Estrela" />
       </div>
-    </TituloDiv>
-    <Descricao>{description}</Descricao>
+    </S.TitleDiv>
+    <S.Description>{description}</S.Description>
     <Button
       type="link"
       to={`/restaurantes/${id}`}
@@ -48,7 +49,7 @@ const Product = ({
     >
       {button}
     </Button>
-  </Card>
+  </S.Card>
 )
 
 export default Product

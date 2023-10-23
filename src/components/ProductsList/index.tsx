@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Product from '../Product'
 
-import { Container, List } from './styles'
+import * as S from './styles'
 
 type Restaurante = {
   id: number
@@ -32,9 +32,9 @@ const ProductsList = () => {
   }, [])
 
   return (
-    <Container>
+    <S.Container>
       <div className="container">
-        <List>
+        <S.List>
           {restaurantes.map((restaurante, index) => (
             <Product
               key={restaurante.id}
@@ -48,9 +48,9 @@ const ProductsList = () => {
               id={restaurante.id}
             />
           ))}
-        </List>
+        </S.List>
       </div>
-    </Container>
+    </S.Container>
   )
 }
 

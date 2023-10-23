@@ -1,24 +1,28 @@
 import { Link } from 'react-router-dom'
-
-import { Headerbar, CartButton } from './styles'
-import headerImg from '../../../assets/images/fundo.png'
-
-import logo from '../../../assets/images/logo.svg'
-
-import { open } from '../../../store/reducers/cart'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { RootReducer } from '../../../store'
+import { open } from '../../../store/reducers/cart'
+
+import * as S from './styles'
+
+import headerImg from '../../../assets/images/background.png'
+import logo from '../../../assets/images/logo.svg'
 
 const Header = () => {
   const dispatch = useDispatch()
   const { items } = useSelector((state: RootReducer) => state.cart)
 
   const openCart = () => {
-    dispatch(open())
+    if (items.length > 0) {
+      dispatch(open())
+    } else {
+      alert('Adicione pelo menos 1 item ao carrinho.')
+    }
   }
 
   return (
-    <Headerbar style={{ backgroundImage: `url(${headerImg})` }}>
+    <S.Headerbar style={{ backgroundImage: `url(${headerImg})` }}>
       <div className="container">
         <Link to="/">
           <img src={logo} alt="EFOOD" />
@@ -26,11 +30,11 @@ const Header = () => {
       </div>
       <div className="textos">
         <a href="/">Restaurantes</a>
-        <CartButton onClick={openCart}>
+        <S.CartButton onClick={openCart}>
           {items.length} Produto(s) no carrinho
-        </CartButton>
+        </S.CartButton>
       </div>
-    </Headerbar>
+    </S.Headerbar>
   )
 }
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Headerbar = styled.header`
-  color: ${cores.laranja};
+  color: ${colors.orange};
   height: 384px;
 
   .container {

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Container = styled.section`
   padding: 80px 0;
-  background-color: ${cores.fundo1};
+  background-color: ${colors.background};
 `
 
 export const List = styled.ul`

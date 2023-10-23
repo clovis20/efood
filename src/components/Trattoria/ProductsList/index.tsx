@@ -1,22 +1,22 @@
-import { Prato } from '../../../pages/Trattoria'
 import Product from '../Product'
+import { Prato } from '../../../pages/Trattoria'
 
-import { Container, List } from './styles'
+import * as S from './styles'
 
 interface Props {
   pratos: Prato[]
 }
 
 const ProductsList = ({ pratos }: Props) => (
-  <Container>
+  <S.Container>
     <div className="container">
-      <List>
+      <S.List>
         {pratos.map((prato) => (
           <Product key={prato.id} prato={prato} />
         ))}
-      </List>
+      </S.List>
     </div>
-  </Container>
+  </S.Container>
 )
 
 export default ProductsList

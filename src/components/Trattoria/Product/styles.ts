@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { cores } from '../../../styles'
+import { colors } from '../../../styles'
 
 export const Card = styled.div`
-  background-color: ${cores.laranja};
-  color: ${cores.branca};
-  border: 8px solid ${cores.laranja};
+  background-color: ${colors.orange};
+  color: ${colors.white};
+  border: 8px solid ${colors.orange};
   position: relative;
 
   > div {
@@ -20,15 +20,13 @@ export const Card = styled.div`
   }
 `
 
-export const ImagemPrato = styled.img``
-
 export const Titulo = styled.h3`
   font-weight: bold;
   font-size: 16px;
   margin-top: 8px;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;
@@ -36,9 +34,9 @@ export const Descricao = styled.p`
   margin-bottom: 32px;
 `
 
-export const Botao = styled.button`
-  background-color: ${cores.fundo2};
-  color: ${cores.laranja};
+export const Button = styled.button`
+  background-color: ${colors.background2};
+  color: ${colors.orange};
   font-size: 14px;
   font-weight: bold;
   width: 100%;
@@ -80,8 +78,8 @@ export const ModalContent = styled.div`
   position: relative;
   max-width: 1024px;
   display: flex;
-  background-color: ${cores.laranja};
-  color: ${cores.branca};
+  background-color: ${colors.orange};
+  color: ${colors.white};
   text-align: left;
   font-size: 14px;
   font-weight: 400;
@@ -119,9 +117,9 @@ export const ModalContent = styled.div`
   }
 `
 
-export const AdicionarBotao = styled.button`
-  background-color: ${cores.fundo2};
-  color: ${cores.laranja};
+export const AddButton = styled.button`
+  background-color: ${colors.background2};
+  color: ${colors.orange};
   font-size: 14px;
   font-weight: bold;
   height: 24px;

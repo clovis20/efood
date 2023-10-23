@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Card = styled.div`
   position: relative;
-  background-color: ${cores.branca2};
-  border: 1px solid ${cores.laranja};
+  background-color: ${colors.white2};
+  border: 1px solid ${colors.orange};
 
   max-width: 472px;
 
@@ -15,14 +15,14 @@ export const Card = styled.div`
   }
 `
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-weight: bold;
   font-size: 18px;
   display: block;
   margin-left: 8px;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;
@@ -37,13 +37,13 @@ export const Infos = styled.div`
   right: 16px;
 `
 
-export const Notas = styled.div`
+export const Notes = styled.div`
   font-size: 18px;
   font-weight: bold;
   margin-right: 8px;
 `
 
-export const TituloDiv = styled.div`
+export const TitleDiv = styled.div`
   display: flex;
   justify-content: space-between;
   margin-right: 8px;
